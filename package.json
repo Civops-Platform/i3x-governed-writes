@@ -1,0 +1,22 @@
+{
+  "name": "@civops/i3x-governed-writes",
+  "version": "1.0.0",
+  "description": "Governed writes for CESMII i3X: work-order and setpoint changes by people, systems or AI agents, authorised against authority limits, applied conditionally, read back, compensated on mismatch, and recorded in a hash-chained ledger",
+  "license": "MIT",
+  "author": "CivOps (https://civops.io)",
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": { ".": "./src/index.ts" },
+  "keywords": ["i3x", "cesmii", "governance", "write-back", "audit", "setpoint", "cmms", "ai-agents", "smart-manufacturing"],
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "cmms": "tsx src/synthetic-cmms.ts"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  }
+}

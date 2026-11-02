@@ -1,0 +1,84 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="common.css">
+<style>.mono, .mono text { font-family: "IBM Plex Mono"; white-space: pre; } .sans { font-family: "IBM Plex Sans"; }</style></head>
+<body>
+<div class="left">
+  <img class="logo" src="logo-dark.svg" alt="CivOps">
+  <div class="kicker">OPEN SOURCE · i3X GOVERNED WRITES</div>
+  <h1>Writes with<br><span>a paper trail</span></h1>
+  <div class="tag">Work orders and setpoints change only after identity, authority, freshness and a person's approval, and every step is hash-chained.</div>
+  <div class="chips">
+    <span class="chip on">Agents ask, people approve</span>
+    <span class="chip">Read-back</span>
+    <span class="chip">Never clamped</span>
+    <span class="chip">MIT</span>
+  </div>
+</div>
+<svg class="art" viewBox="0 0 820 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#2563eb" stop-opacity=".45"/><stop offset="100%" stop-color="#2563eb" stop-opacity="0"/></radialGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#93c5fd"/></marker>
+  </defs>
+  <circle cx="420" cy="380" r="330" fill="url(#glow)"/>
+
+  <!-- requester -->
+  <g transform="translate(20 70)">
+    <rect width="200" height="80" rx="14" fill="#172338" stroke="#334a6e" stroke-width="2"/>
+    <text x="100" y="34" text-anchor="middle" class="sans" font-weight="600" font-size="20" fill="#f1f5f9">AI agent</text>
+    <text x="100" y="60" text-anchor="middle" class="mono" font-size="13" fill="#a5b4c8">"raise WO-1042 to P1"</text>
+  </g>
+  <path d="M224 110 L 286 110" stroke="#93c5fd" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- the checks -->
+  <g class="mono" font-size="16">
+    <g transform="translate(296 66)"><rect width="250" height="48" rx="10" fill="#172338" stroke="#3b82f6"/><text x="18" y="30" fill="#f1f5f9">1  identity</text><text x="226" y="30" text-anchor="end" fill="#22c55e">✓</text></g>
+    <g transform="translate(296 126)"><rect width="250" height="48" rx="10" fill="#172338" stroke="#3b82f6"/><text x="18" y="30" fill="#f1f5f9">2  authority limit</text><text x="226" y="30" text-anchor="end" fill="#22c55e">✓</text></g>
+    <g transform="translate(296 186)"><rect width="250" height="48" rx="10" fill="#172338" stroke="#3b82f6"/><text x="18" y="30" fill="#f1f5f9">3  record unchanged</text><text x="226" y="30" text-anchor="end" fill="#22c55e">✓</text></g>
+    <g transform="translate(296 246)"><rect width="250" height="48" rx="10" fill="#172338" stroke="#22c55e" stroke-width="2"/><text x="18" y="30" fill="#f1f5f9">4  approved by planner</text></g>
+    <g transform="translate(296 306)"><rect width="250" height="48" rx="10" fill="#172338" stroke="#3b82f6"/><text x="18" y="30" fill="#f1f5f9">5  apply, If-Match v7</text></g>
+    <g transform="translate(296 366)"><rect width="250" height="48" rx="10" fill="#172338" stroke="#3b82f6"/><text x="18" y="30" fill="#f1f5f9">6  read back</text><text x="226" y="30" text-anchor="end" fill="#22c55e">✓</text></g>
+  </g>
+  <!-- the agent cannot approve -->
+  <path d="M120 154 C 120 230, 200 270, 286 270" stroke="#ef4444" stroke-width="3" stroke-dasharray="6 5" fill="none"/>
+  <g transform="translate(150 230)"><circle r="14" fill="#0f172a" stroke="#ef4444" stroke-width="3"/><path d="M-5 -5 L5 5 M5 -5 L-5 5" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/></g>
+  <text x="20" y="300" class="mono" font-size="13" fill="#ef4444">agents never approve</text>
+
+  <!-- system of record -->
+  <path d="M550 330 L 600 330" stroke="#93c5fd" stroke-width="3" marker-end="url(#arr)"/>
+  <g transform="translate(608 290)">
+    <rect width="202" height="84" rx="14" fill="#172338" stroke="#334a6e" stroke-width="2"/>
+    <text x="101" y="36" text-anchor="middle" class="sans" font-weight="600" font-size="20" fill="#f1f5f9">CMMS</text>
+    <text x="101" y="62" text-anchor="middle" class="mono" font-size="13" fill="#a5b4c8">WO-1042 · P1</text>
+  </g>
+  <g transform="translate(608 400)">
+    <rect width="202" height="70" rx="12" fill="none" stroke="#f59e0b" stroke-dasharray="6 5" stroke-width="2"/>
+    <text x="101" y="30" text-anchor="middle" class="mono" font-size="13" fill="#f59e0b">acked, not applied?</text>
+    <text x="101" y="52" text-anchor="middle" class="mono" font-size="13" fill="#f59e0b">put back by itself</text>
+  </g>
+
+  <!-- setpoint envelope -->
+  <g transform="translate(20 470)">
+    <text x="0" y="0" class="mono" font-size="14" fill="#6b7d96">setpoint envelope</text>
+    <rect x="0" y="20" width="520" height="34" rx="17" fill="#131e33" stroke="#334a6e"/>
+    <rect x="140" y="20" width="230" height="34" fill="#22c55e" fill-opacity=".16" stroke="#22c55e"/>
+    <text x="140" y="78" text-anchor="middle" class="mono" font-size="13" fill="#a5b4c8">170 °C</text>
+    <text x="370" y="78" text-anchor="middle" class="mono" font-size="13" fill="#a5b4c8">190 °C</text>
+    <g transform="translate(450 37)"><circle r="9" fill="#ef4444"/></g>
+    <text x="520" y="6" text-anchor="end" class="mono" font-size="13" fill="#ef4444">196 °C: refused, not clamped</text>
+    <g transform="translate(250 37)"><circle r="9" fill="#22c55e"/></g>
+  </g>
+
+  <!-- the ledger -->
+  <g transform="translate(20 610)">
+    <text x="0" y="0" class="mono" font-size="14" fill="#6b7d96">every step is a version in a hash-chained ledger</text>
+    <g class="mono" font-size="13">
+      <g transform="translate(0 20)"><rect width="140" height="70" rx="10" fill="#172338" stroke="#334a6e"/><text x="14" y="28" fill="#f1f5f9">requested</text><text x="14" y="52" fill="#6b7d96">#a41f…</text></g>
+      <g transform="translate(166 20)"><rect width="140" height="70" rx="10" fill="#172338" stroke="#334a6e"/><text x="14" y="28" fill="#f1f5f9">approved</text><text x="14" y="52" fill="#6b7d96">#07c2…</text></g>
+      <g transform="translate(332 20)"><rect width="140" height="70" rx="10" fill="#172338" stroke="#334a6e"/><text x="14" y="28" fill="#f1f5f9">applied</text><text x="14" y="52" fill="#6b7d96">#e9b0…</text></g>
+      <g transform="translate(498 20)"><rect width="140" height="70" rx="10" fill="#172338" stroke="#22c55e"/><text x="14" y="28" fill="#22c55e">verified</text><text x="14" y="52" fill="#6b7d96">#3d58…</text></g>
+    </g>
+    <g stroke="#3b82f6" stroke-width="3"><path d="M140 55 L 166 55"/><path d="M306 55 L 332 55"/><path d="M472 55 L 498 55"/></g>
+  </g>
+</svg>
+<div class="foot">CivOps · civops.io · MIT licensed · synthetic example data</div>
+</body></html>
